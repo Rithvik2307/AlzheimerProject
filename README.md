@@ -49,7 +49,7 @@ The model prioritizes minimizing False Negatives (missing a diagnosis), which is
 ### 🧠 Interpretability (Grad-CAM)
 To ensure the model isn't a "black box," I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
 
-This visualizes the specific regions of the MRI that led to the diagnosis. As seen in the results, the model correctly focuses on the **ventricles and hippocampus**—areas known to atrophy in Alzheimer's patients—rather than background noise.
+This visualizes the specific regions of the MRI that led to the diagnosis. As seen in the results, the model correctly focuses on the **ventricles and hippocampus**, areas known to atrophy in Alzheimer's patients rather than background noise.
 
 ## 🚀 How to Run
 1.  **Install Dependencies:**
