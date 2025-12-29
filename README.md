@@ -8,7 +8,7 @@
 This project implements a **Convolutional Neural Network (CNN)** to detect Alzheimer's Dementia from 3D MRI scans. Beyond simple classification, it utilizes **Grad-CAM (Gradient-weighted Class Activation Mapping)** to provide explainability, highlighting exactly *where* in the brain the model detects anomalies.
 
 ## 📸 Model Interpretation (The "Why")
-The image below demonstrates the model's decision-making process. The **Red/Yellow** regions indicate areas of high activation—specifically focusing on cortical atrophy and ventricular enlargement key to Alzheimer's diagnosis.
+The image below demonstrates the model's decision-making process. The **Red/Yellow** regions indicate areas of high activation, specifically focusing on cortical atrophy and ventricular enlargement key to Alzheimer's diagnosis.
 
 ![Model Explanation](gradcam_result.jpg)
 *(Figure 1: Side-by-side comparison of raw MRI input vs. Grad-CAM activation heatmap.)*
