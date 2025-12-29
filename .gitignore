@@ -1,0 +1,7 @@
+# Ignore the data
+Dataset/
+__pycache__/
+.DS_Store
+
+# Ignore the trained brain (optional, but recommended if >100MB)
+best_model.pth
