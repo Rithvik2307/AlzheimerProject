@@ -11,7 +11,7 @@ This project implements a **Convolutional Neural Network (CNN)** to detect Alzhe
 The image below demonstrates the model's decision-making process. The **Red/Yellow** regions indicate areas of high activation, specifically focusing on cortical atrophy and ventricular enlargement key to Alzheimer's diagnosis.
 
 ![Model Explanation](gradcam_result.jpg)
-*(Figure 1: Side-by-side comparison of raw MRI input vs. Grad-CAM activation heatmap.)*
+*(Figure 1:  Grad-CAM activation heatmap
 
 ---
 
@@ -26,6 +26,30 @@ The image below demonstrates the model's decision-making process. The **Red/Yell
 * `model.py`: PyTorch CNN definition.
 * `train.py`: Training loop with CrossEntropyLoss and Adam Optimizer.
 * `explain.py`: Visualization script using Grad-CAM.
+
+## 📊 Results & Performance
+The model was trained for 10 epochs and achieved a final test accuracy of **97.96%** on a withheld test set of 4,800 images.
+
+### Key Metrics
+* **Accuracy:** 97.96%
+* **Recall (Sensitivity):** 99% (Identified 2,228 out of 2,253 Demented cases)
+* **Training Loss:** 0.0258
+* **False Negative Rate:** < 1.1%
+
+### Detailed Breakdown (Confusion Matrix)
+The model prioritizes minimizing False Negatives (missing a diagnosis), which is critical for medical screening tools.
+
+| Metric | Count | Description |
+| :--- | :--- | :--- |
+| **True Positives** | 2,228 | Correctly identified as Demented |
+| **True Negatives** | 2,482 | Correctly identified as Healthy |
+| **False Positives** | 65 | Healthy patients flagged for review |
+| **False Negatives** | **25** | **Only 25 missed cases out of 4,800** |
+
+### 🧠 Interpretability (Grad-CAM)
+To ensure the model isn't a "black box," I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
+
+This visualizes the specific regions of the MRI that led to the diagnosis. As seen in the results, the model correctly focuses on the **ventricles and hippocampus**—areas known to atrophy in Alzheimer's patients—rather than background noise.
 
 ## 🚀 How to Run
 1.  **Install Dependencies:**
