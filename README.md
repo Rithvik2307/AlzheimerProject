@@ -1,13 +1,13 @@
-# Explainable Deep Learning for Early Alzheimer’s Detection 🧠
+# Explainable Deep Learning for Early Alzheimer’s Detection 
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Computer Vision](https://img.shields.io/badge/Computer_Vision-Model-blue?style=for-the-badge)
 ![Research](https://img.shields.io/badge/Research-Grad--CAM-success?style=for-the-badge)
 
-## 📌 The Goal
+##  The Goal
 This project implements a **Convolutional Neural Network (CNN)** to detect Alzheimer's Dementia from 3D MRI scans. Beyond simple classification, it utilizes **Grad-CAM (Gradient-weighted Class Activation Mapping)** to provide explainability, highlighting exactly *where* in the brain the model detects anomalies.
 
-## 📸 Model Interpretation (The "Why")
+##  Model Interpretation (The "Why")
 The image below demonstrates the model's decision-making process. The **Red/Yellow** regions indicate areas of high activation, specifically focusing on cortical atrophy and ventricular enlargement key to Alzheimer's diagnosis.
 
 ![Model Explanation](gradcam_result.jpg)
@@ -15,21 +15,21 @@ The image below demonstrates the model's decision-making process. The **Red/Yell
 
 ---
 
-## 🛠️ Technical Stack
+##  Technical Stack
 * **Core Framework:** PyTorch & Torchvision
 * **Architecture:** Custom 3-Layer CNN with Max Pooling
 * **Explainability:** Grad-CAM Implementation
 * **Data Processing:** OpenCV & NumPy
 * **Evaluation:** Scikit-Learn & Seaborn
 
-## 📂 Project Structure
+##  Project Structure
 * `dataset.py`: ETL pipeline (Image loading, resizing to 128x128, Normalization).
 * `model.py`: PyTorch CNN definition.
 * `train.py`: Training loop with CrossEntropyLoss and Adam Optimizer.
 * `evaluate.py`: Generates performance metrics (Confusion Matrix, Recall).
 * `explain.py`: Visualization script using Grad-CAM.
 
-## 📊 Results & Performance
+##  Results & Performance
 The model was trained for 10 epochs and achieved a final test accuracy of **97.96%** on a withheld test set of 4,800 images.
 
 ### Key Metrics
@@ -48,12 +48,12 @@ The model prioritizes minimizing False Negatives (missing a diagnosis), which is
 | **False Positives** | 65 | Healthy patients flagged for review |
 | **False Negatives** | **25** | **Only 25 missed cases out of 4,800** |
 
-### 🧠 Interpretability (Grad-CAM)
+###  Interpretability (Grad-CAM)
 To ensure the model isn't a "black box," I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
 
 This visualizes the specific regions of the MRI that led to the diagnosis. As seen in the results, the model correctly focuses on the **ventricles and hippocampus**—areas known to atrophy in Alzheimer's patients—rather than background noise.
 
-## 🚀 How to Run
+##  How to Run
 1.  **Install Dependencies:**
     ```bash
     pip install torch torchvision opencv-python matplotlib scikit-learn seaborn
